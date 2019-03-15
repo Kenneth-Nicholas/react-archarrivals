@@ -11,4 +11,49 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+    
+}
+
+.container{
+  margin-top:200px;
+  width: 680px;
+}
+
+.margin-right-5px{
+  margin-right: 5px;
+}
+.nav-bar-custom{
+  background-color: rgb(0, 255, 0) !important;
+}
+
+.nav-bar-button-custom{
+  background-color: gainsboro;
+}
+
+#weBuild{
+  margin-top: 170px;
+}
+
+#whiteLinks {
+  color: white;
+  font-weight: bold;
+}
+
+#whiteLinks2 {
+  color: white;
+  font-weight: bold;
+}
+
+#whiteLinks3 {
+  color: white;
+  font-weight: bold;
+}
+
+#whiteLinks4 {
+  color: white;
+  font-weight: bold;
+}
+
+#studentPortal {
+  font-weight: bold;
 }

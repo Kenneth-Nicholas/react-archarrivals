@@ -1,11 +1,13 @@
 {
-  "name": "react-archarrivals",
+  "name": "react-studentportal",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
+    "axios": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-router-dom": "*",
+    "react-scripts": "*"
   },
   "scripts": {
     "start": "react-scripts start",
