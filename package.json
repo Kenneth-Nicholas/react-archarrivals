@@ -7,7 +7,8 @@
     "react": "*",
     "react-dom": "*",
     "react-router-dom": "*",
-    "react-scripts": "*"
+    "react-scripts": "^2.1.8",
+    "start": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -47,10 +47,10 @@ class Header extends Component {
       let links =(
         <React.Fragment>
         <li className="nav-item">
-           <Link to="/about-us" id="whiteLinks3" className="margin-right-5px"> About Us </Link>
+           <Link to="/about-us" id="whiteLinks3" className="margin-right-5px"> <em>About Us</em> </Link>
         </li>
         <li className="nav-item"> 
-              <Link to ="/sign-up" id="whiteLinks4" className="margin-right-5px"> Sign Up</Link>
+              <Link to ="/sign-up" id="whiteLinks4" className="margin-right-5px"> <em>Sign Up</em> </Link>
         </li>
         </React.Fragment>
       );
@@ -61,7 +61,7 @@ class Header extends Component {
           <form onSubmit={this.signInSubmitHandler} className="form-inline mt-2 mt-md-0">
             <input onChange ={this.signInChangeHandler} id="blackLinks" name="email" type="text" className="margin-right-5px" placeholder="Email" />  
             <input onChange ={this.signInChangeHandler} id="blackLinks2" name="password" type="password" className="margin-right-5px"placeholder="Password" />
-            <button className="nav-bar-button-custom btn btn-outline-success my-2 my-sm-0" type="submit">Sign In</button>
+            <button className="nav-bar-button-custom btn btn-outline-success my-2 my-sm-0" type="submit" id="signIn"> Sign In </button>
           </form>
         </React.Fragment>
       )
@@ -71,10 +71,10 @@ class Header extends Component {
         links = (
            <React.Fragment>
            <li className="nav-item">
-              <Link to="/about-us" className="margin-right-5px"> About Us </Link>
+              <Link to="/about-us" id="whiteLinks3" className="margin-right-5px"> About Us </Link>
            </li>
            <li className="nav-item">
-              <Link to ="/" className="margin-right-5px"> Setting</Link>
+              <Link to ="/" id="whiteLinks4" className="margin-right-5px"> Settings </Link>
           </li>
         </React.Fragment>
         );
@@ -83,9 +83,9 @@ class Header extends Component {
           <React.Fragment>
             <form className="form-inline mt-2 mt-md-0">
               <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />    
-              <button className="nav-bar-button-custom btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              <button id="buttontext5" className="nav-bar-button-custom btn btn-outline-success my-2 my-sm-0" type="submit"> Search for Events </button>
             </form>
-              <button onClick={this.signOut} className="nav-bar-button-custom btn btn-outline-success my-2 my-sm-0" type="text">Sign Out</button>
+              <button id="buttontext2" onClick={this.signOut} className="nav-bar-button-custom btn btn-outline-success my-2 my-sm-0" type="text">Sign Out</button>
           </React.Fragment>
         )
       }
@@ -93,8 +93,8 @@ class Header extends Component {
       return (            
           <header>
           <nav className="nav-bar-custom navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a className=" navbar-brand" id="studentPortal" href="#">Student Portal</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <a className=" navbar-brand" id="studentPortal" href="#"> <em>Arch Arrivals</em> </a>
+            <button id="buttontext" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarCollapse">    

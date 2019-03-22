@@ -14,7 +14,6 @@ class Layout extends Component {
                 <Route exact path="/thank-you" component={ThankYou} />
                 <Route exact path="/" component={SignUp} />
                 <Route exact path="/sign-up" component={SignUp} />
-                <Route exact path="/home" render={(props)=> <Home {...props} /> } />
             </React.Fragment>
         ); 
 
