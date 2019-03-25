@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "*",
+    "jquery": "^3.3.1",
     "react": "*",
     "react-dom": "*",
     "react-router-dom": "*",

@@ -71,10 +71,10 @@ class Header extends Component {
         links = (
            <React.Fragment>
            <li className="nav-item">
-              <Link to="/about-us" id="whiteLinks3" className="margin-right-5px"> About Us </Link>
+              <Link to="/about-us" id="whiteLinks3" className="margin-right-5px"> <em>About Us</em> </Link>
            </li>
-           <li className="nav-item">
-              <Link to ="/" id="whiteLinks4" className="margin-right-5px"> Settings </Link>
+          <li className="nav-item">
+              <Link to ="/" id="whiteLinks4" className="margin-right-5px"> <em>Home</em> </Link>
           </li>
         </React.Fragment>
         );

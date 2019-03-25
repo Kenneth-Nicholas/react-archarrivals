@@ -43,7 +43,7 @@ const Home= (props) =>
             <p className="card-text">Nightlife Related Events</p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button id="view" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
+                <button className="btn btn-sm btn-outline-secondary" id="view" type="button" >View Category</button>
               </div>
               <small className="text-muted"></small>
             </div>
@@ -272,7 +272,6 @@ const Home= (props) =>
 </footer>
           </div>
 
-          
         );
 }
 
