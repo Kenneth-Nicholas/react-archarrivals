@@ -4,6 +4,8 @@ import SignUp from '../SignUp/SignUp';
 import AboutUs from '../AboutUs/AboutUs';
 import ThankYou from '../ThankYou/ThankYou';
 import Home from '../Home/Home';
+import Test from './../Test/Test';
+import SearchResults from './../SearchResults/SearchResults';
 import {Route, withRouter} from 'react-router-dom';
 
 class Layout extends Component {
@@ -33,6 +35,8 @@ class Layout extends Component {
                 <Header {...this.props} />
                 {routes}
                 <Route exact path="/about-us" component={AboutUs} />
+                <Route exact path="/searchEvents" component={SearchResults} />
+                <Route exact path="/getEvents" component={Test} />
             </React.Fragment>
         );
     }

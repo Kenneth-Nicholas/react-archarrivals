@@ -5,7 +5,8 @@ import {Link} from 'react-router-dom';
 class Header extends Component {
     state = {
         email: '',
-        password: ''
+        password: '',
+        search: ''
     }
 
     signInSubmitHandler = (event) => {
@@ -36,6 +37,35 @@ class Header extends Component {
         this.setState( {
             [name]:value // changed from [name]:event.target.value
         })
+    }
+
+    searchSubmitHandler = (event) => {
+      event.preventDefault();
+      axios.get('http://localhost:8080/searchEvents', {
+      params: {
+      searchQuery: this.state.search
+      
+  }
+})
+      
+      .then( (response) => {
+
+        const searchResults = response.data;
+        this.props.history.push({
+          pathname: '/searchEvents',
+          state: { detail: response.data },
+        })
+
+      })                
+    }
+
+    searchChangeHandler = (event) =>
+    {
+      const name = event.target.name;
+      const value = event.target.value;
+      this.setState( {
+        [name]:value
+      })
     }
 
     signOut = (event) =>{
@@ -81,8 +111,8 @@ class Header extends Component {
 
         headerDefault = (
           <React.Fragment>
-            <form className="form-inline mt-2 mt-md-0">
-              <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />    
+            <form onSubmit={this.searchSubmitHandler} className="form-inline mt-2 mt-md-0">
+              <input className="form-control mr-sm-2" onChange ={this.searchChangeHandler} type="text" name="search" placeholder="Search" aria-label="Search" />    
               <button id="buttontext5" className="nav-bar-button-custom btn btn-outline-success my-2 my-sm-0" type="submit"> Search for Events </button>
             </form>
               <button id="buttontext2" onClick={this.signOut} className="nav-bar-button-custom btn btn-outline-success my-2 my-sm-0" type="text">Sign Out</button>

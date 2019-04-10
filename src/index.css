@@ -376,3 +376,39 @@ button {
   width: 1920px;
   height: 712px;
 }
+
+#seasonal {
+  margin-top: 100px;
+}
+
+.eventSearchResult {
+  text-align: left;
+  margin-left: 225px;
+  margin-right: 225px;
+  margin-top: 59px;
+  background-color: rgb(18, 18, 18);
+}
+
+#searchResults {
+  background-color: rgb(18, 18, 18);
+}
+
+#eventlogo {
+  color: rgb(18, 18, 18);
+}
+
+#eventdescription {
+  color: rgb(179, 179, 179);
+}
+
+#eventstart {
+  color: rgb(179, 179, 179);
+}
+
+#eventend {
+  color: rgb(179, 179, 179);
+}
+
+#eventsummary {
+  color: rgb(179, 179, 179);
+}

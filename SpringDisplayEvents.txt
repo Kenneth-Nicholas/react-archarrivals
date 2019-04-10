@@ -1,0 +1,9 @@
+   @RequestMapping(value="/displayEvents", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
+   @ResponseBody
+   public ResponseEntity<ArrayList<Events>> displayListOfEvents() {
+		
+		ArrayList<Events> listOfEvents = (ArrayList<Events>) this.eventRepo.findAll();
+		
+		return new ResponseEntity<ArrayList<Events>>(listOfEvents, HttpStatus.OK);
+		
+   }
