@@ -11,17 +11,18 @@ class SearchResults extends Component {
         console.log(this.props.location.state.detail);
     }
 
-    // the logo is a url link to the image corresponding to the event that is accessible online.
-
-    // I need a for each loop to render this data for each and every event that comes back as a search result.
-
     sendEmail = (eventId) => {
-        eventId.preventDefault();
-        axios.get('http://localhost:8080/sendEmail', {
+        axios.get('http://localhost:8080/emailEvent', {
         params: {
-        eventId: this.props.eventId 
+        eventId: eventId
     }
-    })}
+    })
+
+    .then( (response) => {
+
+    })               
+
+}
 
     render() {
         return(
