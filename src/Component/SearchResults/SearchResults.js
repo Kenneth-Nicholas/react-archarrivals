@@ -7,7 +7,7 @@ class SearchResults extends Component {
 
     constructor (props) {
         super(props);
-        this.setState(this.props.location.state.detail);
+
         console.log(this.props.location.state.detail);
     }
 

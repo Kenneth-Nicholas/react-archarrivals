@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { ReactDOM } from 'react-dom';
 import nightlife from '../../images/nightlife.jpg';
 import sports from '../../images/sports.jpg';
@@ -15,12 +16,42 @@ import recreation from '../../images/recreation.jpg';
 import holiday from '../../images/holiday.jpg';
 import festival from '../../images/festival.jpg';
 import parade from '../../images/parade.JPG'
+import Header from './../Header/Header';
 
 
-const Home= (props) => 
-{    
+class Home extends Component {    
+
+  state = {
+    search: ''
+}
+  
+  searchSubmitHandler = () => {
+    axios.get('http://localhost:8080/searchEvents', {
+    params: {
+    searchQuery: this.state.search
+}
+})
+    
+    .then( (response) => {
+
+      const searchResults = response.data;
+      this.props.history.push({
+        pathname: '/searchEvents',
+        state: { detail: response.data },
+      })
+
+    })                
+  }
+
+  searchQuerySetter = (props) => {
+    this.state.search = props;
+    this.searchSubmitHandler();
+  }
+
+render() {
+
         return (
-
+          
             <div className="container-fluid" id="homePage">
  <main role="main">
 
@@ -43,7 +74,7 @@ const Home= (props) =>
             <p className="card-text">Nightlife Related Events</p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button className="btn btn-sm btn-outline-secondary" id="view" type="button" >View Category</button>
+                <button onClick={()=>this.searchQuerySetter("night")} className="btn btn-sm btn-outline-secondary" id="view" type="button" >View Category</button>
               </div>
               <small className="text-muted"></small>
             </div>
@@ -57,7 +88,7 @@ const Home= (props) =>
             <p className="card-text">Sport Related Events</p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button id="view2" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
+                <button onClick={()=>this.searchQuerySetter("sport")} id="view2" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
               </div>
               <small className="text-muted"></small>
             </div>
@@ -71,7 +102,7 @@ const Home= (props) =>
             <p className="card-text">Music Related Events</p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button id="view15" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
+                <button onClick={()=>this.searchQuerySetter("music")} id="view15" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
               </div>
               <small className="text-muted"></small>
             </div>
@@ -86,7 +117,7 @@ const Home= (props) =>
             <p className="card-text">Standup Comedy Related Events</p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button id="view3" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
+                <button onClick={()=>this.searchQuerySetter("comedy")} id="view3" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
               </div>
               <small className="text-muted"></small>
             </div>
@@ -100,7 +131,7 @@ const Home= (props) =>
             <p className="card-text">Theater Related Events</p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button id="view4" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
+                <button onClick={()=>this.searchQuerySetter("play")} id="view4" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
               </div>
               <small className="text-muted"></small>
             </div>
@@ -114,7 +145,7 @@ const Home= (props) =>
             <p className="card-text">Social & Dating Related Events</p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button id="view5" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
+                <button onClick={()=>this.searchQuerySetter("social")} id="view5" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
               </div>
               <small className="text-muted"></small>
             </div>
@@ -129,7 +160,7 @@ const Home= (props) =>
             <p className="card-text">Professional & Business Related Events</p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button id="view6" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
+                <button onClick={()=>this.searchQuerySetter("business")} id="view6" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
               </div>
               <small className="text-muted"></small>
             </div>
@@ -143,7 +174,7 @@ const Home= (props) =>
             <p className="card-text">Education Related Events</p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button id="view7" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
+                <button onClick={()=>this.searchQuerySetter("learn")} id="view7" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
               </div>
               <small className="text-muted"></small>
             </div>
@@ -157,7 +188,7 @@ const Home= (props) =>
             <p className="card-text">Community & Culture Related Events</p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button id="view8" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
+                <button onClick={()=>this.searchQuerySetter("community")} id="view8" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
               </div>
               <small className="text-muted"></small>
             </div>
@@ -174,7 +205,7 @@ const Home= (props) =>
             <p className="card-text">Recreational Events</p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button id="view9" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
+                <button onClick={()=>this.searchQuerySetter("fun")} id="view9" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
               </div>
               <small className="text-muted"></small>
             </div>
@@ -188,7 +219,7 @@ const Home= (props) =>
             <p className="card-text">Hobby Related Events</p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button id="view10" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
+                <button onClick={()=>this.searchQuerySetter("fun")} id="view10" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
               </div>
               <small className="text-muted"></small>
             </div>
@@ -202,7 +233,7 @@ const Home= (props) =>
             <p className="card-text">Health & Wellness Events</p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button id="view11" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
+                <button onClick={()=>this.searchQuerySetter("exercise")} id="view11" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
               </div>
               <small className="text-muted"></small>
             </div>
@@ -219,7 +250,7 @@ const Home= (props) =>
             <p className="card-text">Festival Related Events</p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button id="view12" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
+                <button onClick={()=>this.searchQuerySetter("fest")} id="view12" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
               </div>
               <small className="text-muted"></small>
             </div>
@@ -233,7 +264,7 @@ const Home= (props) =>
             <p className="card-text">Parade Related Events</p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button id="view13" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
+                <button onClick={()=>this.searchQuerySetter("parade")} id="view13" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
               </div>
               <small className="text-muted"></small>
             </div>
@@ -247,7 +278,7 @@ const Home= (props) =>
             <p className="card-text">Seasonal & Holiday Related Events</p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button id="view14" type="button" className="btn btn-sm btn-outline-secondary"><a href="">View Category</a></button>
+                <button onClick={()=>this.searchQuerySetter("the")} id="view14" type="button" className="btn btn-sm btn-outline-secondary">View Category</button>
               </div>
               <small className="text-muted"></small>
             </div>
@@ -273,6 +304,7 @@ const Home= (props) =>
           </div>
 
         );
+}
 }
 
 export default Home;
